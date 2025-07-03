@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  /* Custom colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-bg: #0e0f12;
+  --color-surface_1: #181a1e;
+  --color-surface_2: #202226;
+  --color-surface_3: #505458;
+  --color-accent: #5ba3f7;
+  --color-accent-hover: #7bb5ff;
+  --color-success: #3bb07f;
+  --color-warning: #d4a73c;
+  --color-error: #d76060;
+  --color-text: #ecedee;
+  --color-text-muted: #b5b7ba;
+  --color-border: #2b2c2f;
+
+  /* Custom fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+@layer utilities {
+  /* override the existing .max-w-7xl */
+  .max-w-7xl {
+    max-width: 82rem; /* whatever custom value you need */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e0f12;
+    --foreground: #ecedee;
+  }
+}
+
+@media (prefers-colr-scheme: light) {
+  :root {
+    --background: #ecedee;
+    --foreground: #0e0f12;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fadein {
+  animation: fadein 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.fadein-delay-1 {
+  animation-delay: 0.2s;
+}
+.fadein-delay-2 {
+  animation-delay: 0.4s;
+}
+.fadein-delay-3 {
+  animation-delay: 0.6s;
+}
+.fadein-delay-4 {
+  animation-delay: 0.8s;
+}
