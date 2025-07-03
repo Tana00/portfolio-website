@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
+      setScrolled(window.scrollY > 100);
     };
     // Check scroll position on mount
     handleScroll();
@@ -68,26 +68,26 @@ const Hero: React.FC = () => {
   return (
     <section
       id="about"
-      className="h-screen max-w-7xl w-full mx-auto px-1 pt-10 mb-20 flex flex-col lg:flex-row items-center justify-between relative overflow-hidden min-h-[500px]"
+      className="xl:min-h-screen max-w-7xl w-full mx-auto px-4 sm:px-8 pt-10 lg:pt-0 mb-10 flex flex-col lg:flex-row items-center justify-between relative overflow-hidden min-h-[500px]"
     >
       <Starfield />
       {/* Left: Text */}
-      <div className="flex-1 flex flex-col justify-center z-10 w-full max-w-xl">
-        <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-left tracking-tight animate-fadein fadein-delay-1 relative">
+      <div className="flex-1 flex flex-col justify-center z-10 w-full max-w-xl items-center lg:items-start">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-center lg:text-left tracking-tight animate-fadein fadein-delay-1 relative">
           <span className="bg-gradient-to-r from-accent to-accent/70 bg-clip-text text-transparent">
             Happiness Oyinlola
           </span>
-          <span className="block h-0.5 w-24 bg-gradient-to-r from-accent to-accent/70 rounded mt-2 mb-2" />
+          <span className="block h-0.5 w-24 bg-gradient-to-r from-accent to-accent/70 rounded mt-2 mb-2 mx-auto lg:mx-0" />
         </h1>
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-text text-left animate-fadein fadein-delay-2">
+        <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 text-text text-center lg:text-left animate-fadein fadein-delay-2">
           Frontend Engineer (React, Next.js, TypeScript)
         </h2>
-        <p className="mb-8 text-text-muted max-w-xl text-left leading-relaxed animate-fadein fadein-delay-3">
+        <p className="mb-8 text-text-muted max-w-xl text-center lg:text-left leading-relaxed animate-fadein fadein-delay-3">
           Skilled Frontend Developer with expertise in React.js, Next.js, and
           TypeScript, specialising in creating user-centric, responsive web
           applications.
         </p>
-        <div className="flex flex-row gap-5 mb-8 items-center animate-fadein fadein-delay-4">
+        <div className="flex flex-row gap-5 mb-8 items-center justify-center lg:justify-start animate-fadein fadein-delay-4">
           <a
             href="/Happiness_Oyinlola_FE_Engineer_CV.pdf"
             download
@@ -98,12 +98,12 @@ const Hero: React.FC = () => {
         </div>
       </div>
       {/* Right: Large Image */}
-      <div className="flex-1 flex justify-end items-center w-full h-full mt-10 lg:mt-0 z-10">
-        <div className="w-full h-full max-w-[600px] aspect-square rounded-3xl overflow-hidden shadow-lg bg-gradient-to-br from-accent to-accent/70 relative">
+      <div className="flex-1 flex justify-center lg:justify-end items-center w-full h-full mt-2 lg:mt-0 z-10">
+        <div className="w-full h-[400px] sm:h-[500px] xl:h-[700px] max-w-[600px] rounded-3xl overflow-hidden shadow-lg bg-gradient-to-br from-accent to-accent/70 relative mx-auto lg:ml-auto">
           <Image
             src="/avatar.png"
             alt="Happiness Oyinlola avatar"
-            width={800}
+            width={8000}
             height={800}
             className="w-full h-full object-cover rounded-3xl"
             priority
@@ -115,7 +115,9 @@ const Hero: React.FC = () => {
       {/* Social Links Fixed at Bottom Left */}
       <div
         className={`fixed z-50 flex ${
-          scrolled ? "flex-col bottom-6 left-12" : "flex-row bottom-12 left-20"
+          scrolled
+            ? "flex-col bottom-4 left-2 sm:bottom-6 sm:left-8"
+            : "flex-row bottom-10 left-4 sm:bottom-12 sm:left-24"
         } gap-4 animate-fadein fadein-delay-4 transition-all duration-500 ease-in-out`}
         style={{ transitionProperty: "bottom, flex-direction" }}
       >
