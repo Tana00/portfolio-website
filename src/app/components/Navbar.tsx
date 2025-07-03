@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface NavbarProps {
   theme: string;
@@ -19,12 +20,18 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full flex items-center justify-between px-8 py-4 shadow-sm transition-colors duration-300 ${
+      className={`sticky top-0 z-50 w-full flex items-center justify-between px-8 pt-4 shadow-sm transition-colors duration-300 ${
         scrolled ? "bg-surface-2/90 backdrop-blur" : "bg-surface-2"
       }`}
     >
-      <div className="font-bold text-lg tracking-tight text-accent">
-        Happiness Oyinlola
+      <div className="font-bold text-lg tracking-tight text-accent flex items-center gap-2">
+        <Image
+          src="/logo.png"
+          alt="Happiness Oyinlola Logo"
+          width={80}
+          height={80}
+          priority
+        />
       </div>
       <div className="flex items-center gap-8">
         <ul className="flex gap-8 text-base font-medium">
