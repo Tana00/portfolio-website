@@ -1,17 +1,9 @@
 "use client";
 
 import "./globals.css";
-import { useState, createContext, useContext, ReactNode } from "react";
+import { useState, ReactNode } from "react";
 import Navbar from "./components/Navbar";
-
-const ThemeContext = createContext({
-  theme: "dark",
-  toggleTheme: () => {},
-});
-
-export function useTheme() {
-  return useContext(ThemeContext);
-}
+import { ThemeContext } from "@/app/components/theme-context";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState("dark");
